@@ -35,32 +35,35 @@ header h1 {
 /* Navigation Styles */
 /* Layout for navigation menu */
 nav {
-  display: flex; /* Flex layout */
-  justify-content: center; /* Center-align links */
-  gap: 30px; /* Spacing between links */
-  flex-wrap: wrap; /* Wrap links on smaller screens */
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Auto-adjust columns */
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center-align the grid */
+  padding: 10px; /* Padding around the grid */
 }
 
 /* Styling for navigation links */
 nav a {
   display: flex; /* Flex layout for alignment */
+  flex-direction: column; /* Stack icon and text */
   align-items: center; /* Center-align content vertically */
   justify-content: center; /* Center-align content horizontally */
   text-decoration: none; /* Remove underline */
   color: #00ffdd; /* Text color */
   background: transparent; /* Transparent background */
-  padding: 20px 30px; /* Padding for clickable area */
+  padding: 0 10px; /* Padding for clickable area */
   font-size: 1.5em; /* Font size */
   font-weight: 600; /* Bold text */
   border: 2px solid #00ffdd; /* Border styling */
   border-radius: 30px; /* Rounded corners */
   transition: all 0.3s ease; /* Smooth hover effect */
   position: relative; /* For pseudo-element positioning */
+  text-align: center; /* Center text inside the link */
 }
 
 /* Icon styling within navigation links */
 nav a i {
-  margin-right: 10px; /* Space between icon and text */
+  margin-bottom: 10px; /* Space between icon and text */
   font-size: 2em; /* Larger icon size */
 }
 
@@ -76,9 +79,9 @@ nav a::before {
   content: ""; /* Empty content for background effect */
   position: absolute; /* Position relative to parent */
   top: 0; /* Cover full area */
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: #00ffdd; /* Highlight color */
   z-index: -1; /* Behind the text */
   border-radius: 30px; /* Match button radius */
@@ -91,12 +94,13 @@ nav a:hover::before {
   opacity: 1;
 }
 
+
 /* Main Section Styles */
 /* Main content area */
 main {
   flex-grow: 1; /* Expand to fill available space */
   display: flex; /* Center-align content */
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.4); /* Slightly transparent background */
   text-align: center; /* Center-align text */
@@ -110,7 +114,7 @@ main {
   flex-direction: column; /* Stack children vertically */
   justify-content: flex-start; /* Align items at the top */
   align-items: center; /* Center horizontally */
-  height: 100%; /* Full height */
+  height: 90%; /* Full height */
   width: 100%; /* Full width */
   box-sizing: border-box; /* Include padding in dimensions */
   max-width: 800px; /* Limit width */
@@ -286,10 +290,11 @@ textarea {
 /* Button Styling */
 /* General button styling */
 button, .button, .btn {
+  margin-top: 25px;
   padding: 16px 30px; /* Button size */
   font-size: 1.3em; /* Font size */
   color: #fff; /* Text color */
-  background-color: #00ffdd; /* Highlight color */
+  background-color: #043c04; /* Highlight color */
   border: none; /* Remove border */
   border-radius: 5px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor */
