@@ -1,96 +1,133 @@
-# Project Description for GitHub
+# AI-Powered Multi-Tool Web Application
 
-## AI-Powered Multi-Tool Web Application
+![Home Page](screenshots/home-page.png)
 
-This project is a Flask-based web application that integrates OpenAI's GPT-3.5 and DALL-E APIs to offer a suite of AI-driven functionalities. It demonstrates a robust implementation of AI capabilities across several domains, including text generation, image creation, conversational AI, audio transcription, and text summarization. This project serves as a proof-of-concept for leveraging AI to solve real-world challenges with innovative, user-friendly tools.
-
----
-
-### Features
-
-1. **Essay Generator**  
-   - Generate custom essays based on user-provided topics, tones, and lengths.  
-   - Save the generated essay as a downloadable `.docx` file.  
-   - Ideal for students, writers, and professionals requiring AI-assisted content creation.
-
-2. **Image Generator**  
-   - Create AI-generated images from user-provided descriptions using OpenAI's DALL-E.  
-   - Images are saved and available for download.  
-   - Useful for design, visualization, and creative projects.
-
-3. **Chatbot**  
-   - Interactive chatbot powered by GPT-3.5 for real-time user conversations.  
-   - Maintains session-based chat history for a seamless experience.  
-   - Suitable for customer support, education, or casual interactions.
-
-4. **Audio Transcription**  
-   - Upload audio files to transcribe spoken content into text using OpenAI's Whisper API.  
-   - Download the transcription as a text file.  
-   - Valuable for accessibility, meeting transcription, and note-taking.
-
-5. **Text Summarizer**  
-   - Summarize lengthy text inputs to concise, easy-to-understand formats.  
-   - Ideal for processing research, articles, or reports quickly.
-
-6. **Session Management and File Handling**  
-   - Secure file uploads and processing using `werkzeug.utils` and Flask's session management.  
-   - Ensures data privacy and smooth user experiences.
+## Overview
+This is a Flask-based web application integrating OpenAI's GPT-3.5 and DALL-E APIs, providing a comprehensive suite of AI-powered functionalities. The project showcases innovative implementations of AI in text generation, image creation, conversational AI, audio transcription, and text summarization. This proof-of-concept aims to demonstrate how AI can tackle real-world challenges with user-friendly tools.
 
 ---
 
-### Technologies Used
-- **Backend**: Flask (Python)
-- **Frontend**: HTML, CSS (with Jinja templates for dynamic rendering)
-- **AI Models**: OpenAI's GPT-3.5, DALL-E, Whisper
-- **Libraries**: 
-  - `requests` for API integration and file downloads.
-  - `docx` for generating Microsoft Word documents.
-  - `secure_filename` for safe file handling.
+## Features
+
+### 1. **Essay Generator**  
+![Essay Generator](screenshots/essay-generator.png)  
+- Generate essays based on user-provided topics, tones, and lengths.
+- Save essays as downloadable `.docx` files.
+- Ideal for students, writers, and professionals.
+
+### 2. **Image Generator**  
+![Image Generator](screenshots/image-generator.png)  
+- Create AI-generated images from descriptive text inputs using DALL-E.
+- Save and download generated images.
+- Perfect for design, visualization, and creative tasks.
+
+### 3. **Chatbot**  
+![ChatBot](screenshots/chat-bot.png)  
+- Real-time conversational AI powered by GPT-3.5.
+- Maintains session-based chat history for continuity.
+- Useful for customer support, education, or casual interaction.
+
+### 4. **Audio Transcription**  
+![Audio Transcription](screenshots/audio-transcription.png)  
+- Transcribe audio files to text using OpenAI's Whisper API.
+- Save transcriptions as text files for download.
+- Great for accessibility, meeting notes, and content documentation.
+
+### 5. **Text Summarizer**  
+![Text Summarizer](screenshots/text-summarizer.png)  
+- Condense lengthy text into concise, digestible summaries.
+- Ideal for processing research, articles, or long reports.
 
 ---
 
-### Use Case and Impact
-This application showcases how AI can be integrated into everyday tools to enhance productivity, creativity, and accessibility. It demonstrates practical implementations of AI across multiple domains, laying the groundwork for scaling similar projects in education, content creation, customer support, and data analysis.
+## Technologies Used
+
+### **Backend**:
+- Flask (Python)
+
+### **Frontend**:
+- HTML and CSS (with Jinja templates for dynamic rendering)
+
+### **AI Models**:
+- OpenAI's GPT-3.5 for text and chatbot features.
+- DALL-E for image generation.
+- Whisper for audio transcription.
+
+### **Key Libraries**:
+- `requests` for API interactions.
+- `docx` for generating Word documents.
+- `secure_filename` for safe file uploads.
 
 ---
 
-### Setup Instructions
-
-1. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/yourusername/ai-powered-multi-tool.git
-   cd ai-powered-multi-tool
-   ```
-
-2. **Install Dependencies**  
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Set Up OpenAI API Key**  
-   - Add your OpenAI API key in a `config.py` file:
-     ```python
-     API_KEY = 'your_openai_api_key'
-     ```
-
-4. **Run the Application**  
-   ```bash
-   python app.py
-   ```
-
-5. **Access the Application**  
-   Visit `http://127.0.0.1:5000` in your web browser.
+## Use Cases and Impact
+This project highlights how AI tools can:
+- Enhance productivity through automation.
+- Foster creativity with innovative features like image generation.
+- Improve accessibility with functionalities like audio transcription.
+- Empower individuals and businesses with scalable solutions.
 
 ---
 
-### Future Improvements
-- Add user authentication and role-based access control.
-- Implement database integration for storing user data and generated content.
-- Expand AI capabilities, such as translation and real-time voice-to-text conversations.
+## Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/ai-powered-multi-tool.git
+cd ai-powered-multi-tool
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Set Up OpenAI API Key
+- Create a `config.py` file and add your OpenAI API key:
+```python
+API_KEY = 'your_openai_api_key'
+```
+
+### 4. Run the Application
+```bash
+python app.py
+```
+
+### 5. Access the Application
+- Open your browser and navigate to `http://127.0.0.1:5000`.
 
 ---
 
-### License
-This project is open-source and available under the [MIT License](LICENSE).
+## Future Improvements
+- Implement user authentication and role-based access control.
+- Add database integration for user data and generated content storage.
+- Expand AI functionalities to include real-time translation and voice-to-text features.
 
-Feel free to contribute, raise issues, or fork the repository to build upon this foundation!
+---
+
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/home-page.png)
+
+### Essay Generator
+![Essay Generator](screenshots/essay-generator.png)
+
+### Image Generator
+![Image Generator](screenshots/image-generator.png)
+
+### Chatbot
+![ChatBot](screenshots/chat-bot.png)
+
+### Audio Transcription
+![Audio Transcription](screenshots/audio-transcription.png)
+
+### Text Summarizer
+![Text Summarizer](screenshots/text-summarizer.png)
+
+---
+
+## License
+This project is open-source and licensed under the [MIT License](LICENSE).
+
+--- 
