@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, session,redirect, url_for
+from flask import Flask, render_template, request, send_file, session, redirect, url_for
 import openai
 from werkzeug.utils import secure_filename
 import os
@@ -12,10 +12,12 @@ app.secret_key = '1234@abcd'  # Secret key for session management
 # Configure OpenAI API key
 openai.api_key = config.API_KEY
 
+
 # Define route for homepage
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 # Essay Generation Route
 @app.route('/essay', methods=['GET', 'POST'])
@@ -45,6 +47,7 @@ def essay():
 
     return render_template('essay.html')
 
+
 # Image Generation Route
 @app.route('/image', methods=['GET', 'POST'])
 def image():
@@ -66,8 +69,9 @@ def image():
 
         # Pass the image file path to the template
         return render_template('image.html', image_url=f'/static/generated_image.png')
-    
+
     return render_template('image.html')
+
 
 # Chatbot Route
 @app.route('/chatbot', methods=['GET', 'POST'])
@@ -97,6 +101,7 @@ def chatbot():
     # Render the chatbot template with current chat history
     return render_template('chatbot.html', chat_history=session['chat_history'])
 
+
 # Clear Chat History Route
 @app.route('/clear_chat', methods=['POST'])
 def clear_chat():
@@ -106,6 +111,7 @@ def clear_chat():
     print("Chat history cleared.")  # Debugging log
     return redirect(url_for('chatbot'))  # Redirect back to chatbot page
 
+
 # Audio Transcription Route
 @app.route('/audio', methods=['GET', 'POST'])
 def audio():
@@ -113,15 +119,15 @@ def audio():
         audio_file = request.files['audio']
         file_path = secure_filename(audio_file.filename)
         audio_file.save(file_path)
-        
+
         response = openai.Audio.transcribe("whisper-1", open(file_path, "rb"))
         transcription = response['text']
-        
+
         # Save transcription to a text file
         transcript_path = os.path.join(app.root_path, 'static', 'transcription.txt')
         with open(transcript_path, 'w') as f:
             f.write(transcription)
-        
+
         os.remove(file_path)
         return render_template('audio.html', transcription=transcription, transcript_link='/static/transcription.txt')
     return render_template('audio.html')
